@@ -175,7 +175,6 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
 .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:3px; color:var(--gold); }
 .footer-copy { font-size:11px; color:var(--muted2); font-family:'Space Mono',monospace; letter-spacing:1px; }
 
-/* ── hamburger ── */
 .nav-hamburger { display:none; background:none; border:none; cursor:pointer; padding:8px; flex-direction:column; gap:5px; }
 .nav-hamburger span { display:block; width:22px; height:2px; background:var(--gold); }
 .nav-mobile { display:none; position:fixed; top:68px; left:0; right:0; background:rgba(5,5,5,0.97); backdrop-filter:blur(20px); border-bottom:1px solid rgba(212,160,23,0.15); padding:16px; z-index:99; flex-direction:column; }
@@ -183,7 +182,6 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
 .nav-mobile a:last-child { border-bottom:none; color:var(--gold); }
 .nav-mobile.open { display:flex; }
 
-/* ── tablet ── */
 @media(max-width:900px) {
   nav { padding:0 20px; }
   .nav-links { display:none; }
@@ -200,62 +198,50 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
   footer { flex-direction:column; gap:10px; text-align:center; padding:24px 20px; }
 }
 
-/* ── mobile ── */
 @media(max-width:480px) {
-  body { cursor:auto; overflow-x:hidden; }
-  .cursor, .cursor-ring { display:none !important; }
-
+  body { cursor:auto; }
+  .cursor, .cursor-ring { display:none; }
   nav { padding:0 16px; height:60px; }
   .nav-mobile { top:60px; }
   .nav-viking { height:32px; width:32px; }
   .nav-logo { font-size:18px; letter-spacing:1px; }
-
   .hero { padding:88px 16px 52px; }
   .hero-tag { font-size:9px; letter-spacing:2px; }
-  .hero-title { font-size:clamp(56px,16vw,80px); }
-  .hero-sub { font-size:clamp(14px,5vw,22px); letter-spacing:3px; margin-bottom:20px; }
+  .hero-title { font-size:clamp(52px,15vw,76px); }
+  .hero-sub { font-size:clamp(13px,4.5vw,20px); letter-spacing:2px; margin-bottom:20px; }
   .hero-desc { font-size:13px; margin-bottom:24px; }
   .badge { font-size:9px; padding:4px 10px; letter-spacing:1px; }
-
   .stats-bar { grid-template-columns:1fr 1fr; }
   .stat-item { padding:18px 10px; }
-  .stat-num { font-size:32px; }
-  .stat-label { font-size:9px; letter-spacing:1px; }
-
-  .section { padding:48px 16px; }
-  .sponsors-inner { padding:48px 16px; }
+  .stat-num { font-size:30px; }
+  .stat-label { font-size:8px; letter-spacing:1px; }
+  .section { padding:44px 16px; }
+  .sponsors-inner { padding:44px 16px; }
   .section-label { font-size:9px; letter-spacing:2px; }
-  .section-title { font-size:clamp(28px,8vw,40px); letter-spacing:0; line-height:1.05; }
-
-  .teams-nav { margin-bottom:24px; }
-  .team-tab { padding:10px 12px; font-size:15px; gap:6px; }
+  .section-title { font-size:clamp(26px,7vw,38px); letter-spacing:0; line-height:1.05; }
+  .teams-nav { margin-bottom:20px; }
+  .team-tab { padding:10px 11px; font-size:14px; gap:6px; }
   .team-tab .tab-logo { height:20px; width:20px; }
-
-  .team-number { font-size:60px; }
-  .team-name { font-size:22px; letter-spacing:2px; margin-bottom:12px; }
+  .team-number { font-size:58px; }
+  .team-name { font-size:21px; letter-spacing:2px; margin-bottom:12px; }
   .team-desc { font-size:13px; line-height:1.6; margin-bottom:14px; }
   .team-social { font-size:11px; margin-bottom:18px; }
-
   .season-tabs { overflow-x:auto; flex-wrap:nowrap; -webkit-overflow-scrolling:touch; }
   .season-btn { padding:9px 11px; font-size:8px; flex-shrink:0; }
-  .season-content { padding:14px; }
+  .season-content { padding:12px; }
   .award-text { font-size:12px; }
   .award-qual { font-size:10px; }
-
   .about-text p { font-size:13px; }
-  .about-quote { font-size:14px; padding-left:14px; margin:20px 0; }
-  .info-box { padding:20px 16px; }
+  .about-quote { font-size:14px; padding-left:14px; margin:18px 0; }
+  .info-box { padding:20px 14px; }
   .info-row { flex-direction:column; gap:2px; padding:10px 0; }
   .info-val { text-align:left; font-size:13px; }
-
   .tiers-grid { grid-template-columns:1fr; }
-  .tier-card { padding:24px 18px; }
-  .tier-price { font-size:40px; }
-
+  .tier-card { padding:22px 16px; }
+  .tier-price { font-size:38px; }
   .social-grid { grid-template-columns:1fr 1fr; }
   .contact-val { font-size:13px; }
-
-  footer { padding:20px 16px; }
+  footer { padding:18px 16px; }
   .footer-logo { font-size:16px; }
   .footer-copy { font-size:9px; }
 }
@@ -281,11 +267,11 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
   <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="#teams" onclick="this.closest('#navMobile').classList.remove('open')">Teams</a>
-  <a href="#about" onclick="this.closest('#navMobile').classList.remove('open')">About</a>
-  <a href="#sponsors" onclick="this.closest('#navMobile').classList.remove('open')">Sponsors</a>
-  <a href="#contact" onclick="this.closest('#navMobile').classList.remove('open')">Contact</a>
-  <a href="#sponsors" onclick="this.closest('#navMobile').classList.remove('open')">Support Us ↗</a>
+  <a href="#teams" onclick="document.getElementById('navMobile').classList.remove('open')">Teams</a>
+  <a href="#about" onclick="document.getElementById('navMobile').classList.remove('open')">About</a>
+  <a href="#sponsors" onclick="document.getElementById('navMobile').classList.remove('open')">Sponsors</a>
+  <a href="#contact" onclick="document.getElementById('navMobile').classList.remove('open')">Contact</a>
+  <a href="#sponsors" onclick="document.getElementById('navMobile').classList.remove('open')">Support Us ↗</a>
 </div>
 
 <div class="hero">
@@ -341,7 +327,7 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
     <div>
       <div class="team-number">750S</div>
       <div class="team-name">THE SENTINELS</div>
-      <p class="team-desc">The Sentinels are SBHS's flagship team. This season, 750S has earned a qualification for the <strong style="color:var(--white)">VEX Robotics World Championship</strong> in St. Louis, Missouri (April 21–30, 2026), competing against the best teams on the planet in the Push Back game.</p>
+      <p class="team-desc">Team 750S competes in the VEX V5 Robotics Competition. This season, the Sentinels qualified for the <strong style="color:var(--white)">VEX Robotics World Championship</strong> in St. Louis, Missouri (April 21–30, 2026), earning multiple awards including Tournament Champions and Robot Skills Champion in Push Back.</p>
       <a href="https://www.instagram.com/750sentinels/" target="_blank" class="team-social">↗ @750sentinels</a>
       <div class="season-tabs">
         <button class="season-btn active" data-sid="pb">2025-26 Push Back</button>
@@ -378,7 +364,7 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
     <div>
       <div class="team-number">750B</div>
       <div class="team-name">BLITZ</div>
-      <p class="team-desc">Team Blitz is one of the most decorated teams in the 750 program. With multiple Tournament Championships, Excellence Awards, Robot Skills titles, and a World Championship qualification via the NJ State Championship in Spin Up, Blitz brings intensity to every competition.</p>
+      <p class="team-desc">Team 750B competes in the VEX V5 Robotics Competition. Blitz has earned multiple Tournament Championships, Excellence Awards, and Robot Skills titles across several seasons, including a World Championship qualification via the NJ State Championship in Spin Up.</p>
       <a href="https://www.instagram.com/750blitz/" target="_blank" class="team-social">↗ @750blitz</a>
       <div class="season-tabs">
         <button class="season-btn active" data-sid="pb">2025-26 Push Back</button>
@@ -424,7 +410,7 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
     <div>
       <div class="team-number">750C</div>
       <div class="team-name">COBRAS</div>
-      <p class="team-desc">The Cobras are known for strong mechanical design and competitive drive. With multiple Tournament Championships, Excellence Awards, and Design Awards across several seasons, Team 750C is a consistent force in the 750 program.</p>
+      <p class="team-desc">Team 750C competes in the VEX V5 Robotics Competition. The Cobras have earned multiple Tournament Championships, Excellence Awards, and Design Awards across several seasons, including an Excellence Award at the SBHS Push Back Tournament this season.</p>
       <a href="https://www.instagram.com/750cobras/" target="_blank" class="team-social">↗ @750cobras</a>
       <div class="season-tabs">
         <button class="season-btn active" data-sid="pb">2025-26 Push Back</button>
@@ -466,7 +452,7 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
     <div>
       <div class="team-number">750R</div>
       <div class="team-name">ROYALS</div>
-      <p class="team-desc">The Royals are known for excellence in design and documentation. With multiple Design Awards, an Excellence Award, and Tournament Championship titles across several seasons, Team 750R consistently performs at the highest level.</p>
+      <p class="team-desc">Team 750R competes in the VEX V5 Robotics Competition. The Royals have earned multiple Design Awards, an Excellence Award, and Tournament Championship titles across several seasons, including a Design Award at Camden Catholic in Push Back this season.</p>
       <a href="https://www.instagram.com/sbhs_750r/" target="_blank" class="team-social">↗ @sbhs_750r</a>
       <div class="season-tabs">
         <button class="season-btn active" data-sid="pb">2025-26 Push Back</button>
@@ -504,7 +490,7 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
     <div>
       <div class="team-number">750E</div>
       <div class="team-name">EMBER</div>
-      <p class="team-desc">Team Ember competes in the VEX V5 Robotics Competition as part of the 750 program. Competing in Push Back this season, 750E earned an Innovate Award at the SBHS tournament and continues to develop their robot design, programming, and competition strategy across every event they attend.</p>
+      <p class="team-desc">Team 750E competes in the VEX V5 Robotics Competition. The Ember team earned an Innovate Award at the SBHS Push Back Tournament this season, developing their robot design, programming, and competition strategy across every event they attend.</p>
       <a href="https://www.instagram.com/sbhs750/" target="_blank" class="team-social">↗ @sbhs750</a>
       <div class="season-tabs">
         <button class="season-btn active" data-sid="pb">2025-26 Push Back</button>
@@ -526,7 +512,7 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
     <div>
       <div class="team-number">750W</div>
       <div class="team-name">WOLVES</div>
-      <p class="team-desc">The Wolves compete as a pack — smart, coordinated, and consistent. With an Excellence Award in their first season, multiple Amaze Awards, and continued improvement each year, Team 750W has established itself as a strong presence in the 750 program.</p>
+      <p class="team-desc">Team 750W competes in the VEX V5 Robotics Competition. The Wolves have earned an Excellence Award, multiple Amaze Awards, and continued to build on their results each season, competing in Push Back this year with two Amaze Award wins.</p>
       <a href="https://www.instagram.com/750wolves/" target="_blank" class="team-social">↗ @750wolves</a>
       <div class="season-tabs">
         <button class="season-btn active" data-sid="pb">2025-26 Push Back</button>
@@ -669,13 +655,9 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
 <script>
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
-
-// Hamburger
-const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-if (isTouchDevice) {
-  document.getElementById('cursor').style.display='none';
-  document.getElementById('cursorRing').style.display='none';
-  document.body.style.cursor='auto';
+const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+if (isTouch) {
+  cursor.style.display='none'; ring.style.display='none'; document.body.style.cursor='auto';
 } else {
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx-4+'px';cursor.style.top=my-4+'px';});
