@@ -75,7 +75,7 @@ nav {
 .section-label::before { content:''; display:block; width:28px; height:1px; background:var(--gold); }
 .section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(38px,5.5vw,66px); line-height:1; letter-spacing:1px; margin-bottom:20px; }
 
-.teams-nav { display:flex; border-bottom:1px solid var(--gray2); margin-bottom:44px; overflow-x:auto; scrollbar-width:none; }
+.teams-nav { display:flex; border-bottom:1px solid var(--gray2); margin-bottom:44px; overflow-x:auto; scrollbar-width:none; gap:0; }
 .teams-nav::-webkit-scrollbar { display:none; }
 .team-tab {
   padding:12px 22px; background:none; border:none; color:var(--muted2);
@@ -219,9 +219,38 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
   .sponsors-inner { padding:44px 16px; }
   .section-label { font-size:9px; letter-spacing:2px; }
   .section-title { font-size:clamp(26px,7vw,38px); letter-spacing:0; line-height:1.05; }
-  .teams-nav { margin-bottom:20px; }
-  .team-tab { padding:10px 11px; font-size:14px; gap:6px; }
-  .team-tab .tab-logo { height:20px; width:20px; }
+  .teams-nav {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+    margin-bottom:20px;
+    overflow:visible;
+    border-bottom:none;
+  }
+  .team-tab {
+    width:100%;
+    min-width:0;
+    justify-content:center;
+    padding:10px 8px;
+    font-size:13px;
+    gap:6px;
+    border:1px solid var(--gray2);
+    background:var(--gray);
+  }
+  .team-tab .tab-logo {
+    height:18px;
+    width:18px;
+    flex-shrink:0;
+  }
+  .team-tab .tab-emoji {
+    font-size:16px;
+    flex-shrink:0;
+  }
+  .team-tab::after { display:none; }
+  .team-tab.active {
+    border-color:var(--gold);
+    background:rgba(212,160,23,0.08);
+  }
   .team-number { font-size:58px; }
   .team-name { font-size:21px; letter-spacing:2px; margin-bottom:12px; }
   .team-desc { font-size:13px; line-height:1.6; margin-bottom:14px; }
@@ -326,7 +355,7 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
   <div class="team-panel active" id="panel-750s">
     <div>
       <div class="team-number">750S</div>
-      <div class="team-name">THE SENTINELS</div>
+      <div class="team-name">SENTINELS</div>
       <p class="team-desc">Team 750S competes in the VEX V5 Robotics Competition. This season, the Sentinels qualified for the <strong style="color:var(--white)">VEX Robotics World Championship</strong> in St. Louis, Missouri (April 21–30, 2026), earning multiple awards including Tournament Champions and Robot Skills Champion in Push Back.</p>
       <a href="https://www.instagram.com/750sentinels/" target="_blank" class="team-social">↗ @750sentinels</a>
       <div class="season-tabs">
