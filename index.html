@@ -102,9 +102,23 @@ nav {
 .team-social { display:inline-flex; align-items:center; gap:8px; color:var(--gold); text-decoration:none; font-size:12px; font-family:'Space Mono',monospace; letter-spacing:1px; border-bottom:1px solid rgba(212,160,23,0.3); padding-bottom:2px; transition:all 0.2s; margin-bottom:24px; }
 .team-social:hover { color:var(--gold-bright); border-color:var(--gold-bright); }
 
-.season-tabs { display:flex; border:1px solid var(--gray2); overflow-x:auto; scrollbar-width:none; }
+.season-tabs { display:flex; border:1px solid var(--gray2); overflow-x:auto; scrollbar-width:none; width:100%; }
 .season-tabs::-webkit-scrollbar { display:none; }
-.season-btn { padding:9px 14px; background:none; border:none; border-right:1px solid var(--gray2); color:var(--muted2); font-family:'Space Mono',monospace; font-size:9px; letter-spacing:1px; cursor:pointer; white-space:nowrap; transition:all 0.2s; text-transform:uppercase; }
+.season-btn {
+  padding:8px 11px;
+  background:none;
+  border:none;
+  border-right:1px solid var(--gray2);
+  color:var(--muted2);
+  font-family:'Space Mono',monospace;
+  font-size:8px;
+  letter-spacing:0.8px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:all 0.2s;
+  text-transform:uppercase;
+  flex:0 0 auto;
+}
 .season-btn:last-child { border-right:none; }
 .season-btn.active { background:rgba(212,160,23,0.1); color:var(--gold); }
 .season-btn:hover { color:var(--white); }
@@ -255,8 +269,18 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
   .team-name { font-size:21px; letter-spacing:2px; margin-bottom:12px; }
   .team-desc { font-size:13px; line-height:1.6; margin-bottom:14px; }
   .team-social { font-size:11px; margin-bottom:18px; }
-  .season-tabs { overflow-x:auto; flex-wrap:nowrap; -webkit-overflow-scrolling:touch; }
-  .season-btn { padding:9px 11px; font-size:8px; flex-shrink:0; }
+  .season-tabs {
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    -webkit-overflow-scrolling:touch;
+    width:100%;
+  }
+  .season-btn {
+    padding:8px 9px;
+    font-size:7px;
+    letter-spacing:0.7px;
+    flex-shrink:0;
+  }
   .season-content { padding:12px; }
   .award-text { font-size:12px; }
   .award-qual { font-size:10px; }
