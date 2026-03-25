@@ -19,7 +19,7 @@
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { overflow-x:hidden; background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; overflow-x:hidden; cursor:none; }
+body { background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; overflow-x:hidden; cursor:none; }
 
 .cursor { width:8px; height:8px; background:var(--gold); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9999; mix-blend-mode:difference; }
 .cursor-ring { width:28px; height:28px; border:1px solid var(--gold); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9998; transition:all 0.15s ease; opacity:0.5; }
@@ -70,7 +70,7 @@ nav {
 .stat-num { font-family:'Bebas Neue',sans-serif; font-size:44px; color:var(--gold); line-height:1; display:block; }
 .stat-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted2); margin-top:4px; font-family:'Space Mono',monospace; }
 
-.section { padding:90px 40px; max-width:1160px; margin:0 auto; overflow-x:hidden; }
+.section { padding:90px 40px; max-width:1160px; margin:0 auto; }
 .section-label { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:4px; color:var(--gold); text-transform:uppercase; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
 .section-label::before { content:''; display:block; width:28px; height:1px; background:var(--gold); }
 .section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(38px,5.5vw,66px); line-height:1; letter-spacing:1px; margin-bottom:20px; }
@@ -172,89 +172,90 @@ nav {
 .social-handle { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:1px; color:var(--muted2); }
 
 footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; justify-content:space-between; align-items:center; }
+.footer-logo { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:3px; color:var(--gold); }
+.footer-copy { font-size:11px; color:var(--muted2); font-family:'Space Mono',monospace; letter-spacing:1px; }
+
+/* ── hamburger ── */
 .nav-hamburger { display:none; background:none; border:none; cursor:pointer; padding:8px; flex-direction:column; gap:5px; }
-.nav-hamburger span { display:block; width:22px; height:2px; background:var(--gold); transition:all 0.3s; }
-.nav-mobile { display:none; position:fixed; top:60px; left:0; right:0; background:rgba(5,5,5,0.97); backdrop-filter:blur(20px); border-bottom:1px solid rgba(212,160,23,0.15); padding:20px 16px; z-index:99; flex-direction:column; gap:0; }
-.nav-mobile a { color:var(--muted2); text-decoration:none; font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.05); display:block; transition:color 0.2s; }
+.nav-hamburger span { display:block; width:22px; height:2px; background:var(--gold); }
+.nav-mobile { display:none; position:fixed; top:68px; left:0; right:0; background:rgba(5,5,5,0.97); backdrop-filter:blur(20px); border-bottom:1px solid rgba(212,160,23,0.15); padding:16px; z-index:99; flex-direction:column; }
+.nav-mobile a { color:var(--muted2); text-decoration:none; font-size:14px; font-weight:500; letter-spacing:1px; text-transform:uppercase; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.05); display:block; }
 .nav-mobile a:last-child { border-bottom:none; color:var(--gold); }
 .nav-mobile.open { display:flex; }
-@media(max-width:600px) {
-  .nav-hamburger { display:flex; }
-}
 
-/* ── TABLET ── */
-@media(max-width:960px) {
-  .nav-links { display:none; }
+/* ── tablet ── */
+@media(max-width:900px) {
   nav { padding:0 20px; }
-  .section { padding:70px 24px; }
-  .hero { padding:110px 24px 70px; }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; }
+  .section { padding:64px 24px; }
+  .sponsors-inner { padding:64px 24px; }
+  .hero { padding:100px 24px 64px; }
   .stats-bar { grid-template-columns:repeat(2,1fr); }
   .team-panel.active { grid-template-columns:1fr; }
-  .about-grid { grid-template-columns:1fr; gap:40px; }
-  .contact-grid { grid-template-columns:1fr; gap:40px; }
+  .about-grid { grid-template-columns:1fr; gap:36px; }
+  .contact-grid { grid-template-columns:1fr; gap:36px; }
   .tiers-grid { grid-template-columns:1fr 1fr; }
   .team-card-visual { display:none; }
   footer { flex-direction:column; gap:10px; text-align:center; padding:24px 20px; }
 }
 
-/* ── MOBILE ── */
-@media(max-width:600px) {
-  body { cursor:auto; }
-  .cursor, .cursor-ring { display:none; }
+/* ── mobile ── */
+@media(max-width:480px) {
+  body { cursor:auto; overflow-x:hidden; }
+  .cursor, .cursor-ring { display:none !important; }
 
   nav { padding:0 16px; height:60px; }
-  .nav-viking { height:34px; width:34px; }
-  .nav-logo { font-size:20px; letter-spacing:2px; }
+  .nav-mobile { top:60px; }
+  .nav-viking { height:32px; width:32px; }
+  .nav-logo { font-size:18px; letter-spacing:1px; }
 
-  .hero { padding:90px 16px 56px; min-height:100svh; }
-  .hero-tag { font-size:9px; letter-spacing:2px; margin-bottom:14px; }
-  .hero-title { font-size:clamp(60px,18vw,90px); }
-  .hero-sub { font-size:clamp(16px,5vw,28px); letter-spacing:4px; margin-bottom:24px; }
-  .hero-desc { font-size:14px; margin-bottom:28px; }
-  .hero-badges { gap:8px; }
-  .badge { font-size:9px; padding:5px 10px; letter-spacing:1px; }
+  .hero { padding:88px 16px 52px; }
+  .hero-tag { font-size:9px; letter-spacing:2px; }
+  .hero-title { font-size:clamp(56px,16vw,80px); }
+  .hero-sub { font-size:clamp(14px,5vw,22px); letter-spacing:3px; margin-bottom:20px; }
+  .hero-desc { font-size:13px; margin-bottom:24px; }
+  .badge { font-size:9px; padding:4px 10px; letter-spacing:1px; }
 
   .stats-bar { grid-template-columns:1fr 1fr; }
-  .stat-item { padding:20px 12px; }
-  .stat-num { font-size:34px; }
+  .stat-item { padding:18px 10px; }
+  .stat-num { font-size:32px; }
   .stat-label { font-size:9px; letter-spacing:1px; }
 
-  .section { padding:52px 16px; }
-  .section-title { font-size:clamp(22px,6.5vw,36px) !important; margin-bottom:16px; letter-spacing:0 !important; overflow-wrap:break-word; word-break:break-word; max-width:100%; white-space:normal; }
+  .section { padding:48px 16px; }
+  .sponsors-inner { padding:48px 16px; }
   .section-label { font-size:9px; letter-spacing:2px; }
+  .section-title { font-size:clamp(28px,8vw,40px); letter-spacing:0; line-height:1.05; }
 
-  .teams-nav { margin-bottom:28px; }
-  .team-tab { padding:10px 14px; font-size:16px; gap:7px; }
-  .team-tab .tab-logo { height:22px; width:22px; }
+  .teams-nav { margin-bottom:24px; }
+  .team-tab { padding:10px 12px; font-size:15px; gap:6px; }
+  .team-tab .tab-logo { height:20px; width:20px; }
 
-  .team-number { font-size:64px; }
-  .team-name { font-size:24px; letter-spacing:3px; margin-bottom:14px; }
-  .team-desc { font-size:13px; margin-bottom:16px; }
+  .team-number { font-size:60px; }
+  .team-name { font-size:22px; letter-spacing:2px; margin-bottom:12px; }
+  .team-desc { font-size:13px; line-height:1.6; margin-bottom:14px; }
+  .team-social { font-size:11px; margin-bottom:18px; }
 
-  .season-tabs { flex-wrap:nowrap; overflow-x:auto; }
-  .season-btn { padding:9px 12px; font-size:8px; letter-spacing:0.5px; flex-shrink:0; }
+  .season-tabs { overflow-x:auto; flex-wrap:nowrap; -webkit-overflow-scrolling:touch; }
+  .season-btn { padding:9px 11px; font-size:8px; flex-shrink:0; }
   .season-content { padding:14px; }
   .award-text { font-size:12px; }
   .award-qual { font-size:10px; }
 
-  .about-grid { gap:28px; }
   .about-text p { font-size:13px; }
-  .about-quote { font-size:14px; padding-left:16px; margin:20px 0; }
-  .info-box { padding:24px 18px; }
-  .info-row { flex-direction:column; gap:4px; }
-  .info-val { text-align:left; }
+  .about-quote { font-size:14px; padding-left:14px; margin:20px 0; }
+  .info-box { padding:20px 16px; }
+  .info-row { flex-direction:column; gap:2px; padding:10px 0; }
+  .info-val { text-align:left; font-size:13px; }
 
-  .sponsors-inner { padding:52px 16px; }
   .tiers-grid { grid-template-columns:1fr; }
-  .tier-card { padding:24px 20px; }
+  .tier-card { padding:24px 18px; }
   .tier-price { font-size:40px; }
 
-  .contact-grid { gap:32px; }
+  .social-grid { grid-template-columns:1fr 1fr; }
   .contact-val { font-size:13px; }
-  .social-grid { grid-template-columns:repeat(2,1fr); gap:6px; }
-  .social-team { font-size:16px; }
 
-  footer { padding:20px 16px; gap:8px; }
+  footer { padding:20px 16px; }
   .footer-logo { font-size:16px; }
   .footer-copy { font-size:9px; }
 }
@@ -277,16 +278,14 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
     <li><a href="#contact">Contact</a></li>
     <li><a href="#sponsors" class="nav-cta">Support Us</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="#teams" onclick="closeMobileNav()">Teams</a>
-  <a href="#about" onclick="closeMobileNav()">About</a>
-  <a href="#sponsors" onclick="closeMobileNav()">Sponsors</a>
-  <a href="#contact" onclick="closeMobileNav()">Contact</a>
-  <a href="#sponsors" onclick="closeMobileNav()">Support Us ↗</a>
+  <a href="#teams" onclick="this.closest('#navMobile').classList.remove('open')">Teams</a>
+  <a href="#about" onclick="this.closest('#navMobile').classList.remove('open')">About</a>
+  <a href="#sponsors" onclick="this.closest('#navMobile').classList.remove('open')">Sponsors</a>
+  <a href="#contact" onclick="this.closest('#navMobile').classList.remove('open')">Contact</a>
+  <a href="#sponsors" onclick="this.closest('#navMobile').classList.remove('open')">Support Us ↗</a>
 </div>
 
 <div class="hero">
@@ -314,7 +313,7 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
 
 <div class="section" id="teams">
   <div class="section-label">Our Teams</div>
-  <h2 class="section-title">Meet the <span style="color:var(--gold)">750</span><wbr> Family</h2>
+  <h2 class="section-title">Meet the <span style="color:var(--gold)">750</span> Family</h2>
 
   <div class="teams-nav">
     <button class="team-tab active" data-team="750s">
@@ -505,7 +504,7 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
     <div>
       <div class="team-number">750E</div>
       <div class="team-name">EMBER</div>
-      <p class="team-desc">Ember is one of the 750 program's rising teams, competing in the VEX V5 Robotics Competition with growing momentum. Already earning hardware in Push Back, Team 750E is a team on the rise.</p>
+      <p class="team-desc">Team Ember competes in the VEX V5 Robotics Competition as part of the 750 program. Competing in Push Back this season, 750E earned an Innovate Award at the SBHS tournament and continues to develop their robot design, programming, and competition strategy across every event they attend.</p>
       <a href="https://www.instagram.com/sbhs750/" target="_blank" class="team-social">↗ @sbhs750</a>
       <div class="season-tabs">
         <button class="season-btn active" data-sid="pb">2025-26 Push Back</button>
@@ -670,24 +669,21 @@ footer { border-top:1px solid var(--gray2); padding:28px 40px; display:flex; jus
 <script>
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
+
+// Hamburger
 const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 if (isTouchDevice) {
-  cursor.style.display = 'none';
-  ring.style.display = 'none';
-  document.body.style.cursor = 'auto';
+  document.getElementById('cursor').style.display='none';
+  document.getElementById('cursorRing').style.display='none';
+  document.body.style.cursor='auto';
 } else {
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx-4+'px';cursor.style.top=my-4+'px';});
-  (function animRing(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx-14+'px';ring.style.top=ry-14+'px';requestAnimationFrame(animRing);})();
+  (function aR(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx-14+'px';ring.style.top=ry-14+'px';requestAnimationFrame(aR);})();
 }
-
-// Hamburger menu
-const hamburger = document.getElementById('hamburger');
-const navMobile = document.getElementById('navMobile');
-function closeMobileNav() { navMobile.classList.remove('open'); }
-if (hamburger) {
-  hamburger.addEventListener('click', () => navMobile.classList.toggle('open'));
-}
+const hb=document.getElementById('hamburger');
+const nm=document.getElementById('navMobile');
+if(hb) hb.addEventListener('click',()=>nm.classList.toggle('open'));
 
 // Team tabs
 document.querySelectorAll('.team-tab').forEach(tab=>{
